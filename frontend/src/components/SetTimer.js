@@ -16,7 +16,7 @@ const SetSession = styled.div`
 const SetClock = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 80%;
     height: 20%;
@@ -27,7 +27,7 @@ const SetNumber = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 45%;
+    width: 30%;
     height: 100%;
 `
 

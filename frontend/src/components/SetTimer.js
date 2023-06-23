@@ -18,7 +18,7 @@ const SetClock = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    width: 80%;
+    width: 75%;
     height: 20%;
 `
 
@@ -27,19 +27,19 @@ const SetNumber = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 30%;
+    width: 35%;
     height: 100%;
 `
 
 const InputNumber = styled.input`
-    width: 100%;
+    width: 80%;
     height: 50%;
     font-size: 70px;
     text-align: center;
 `
 
 const IncrementNumber = styled.button`
-    width: 100%;
+    width: 80%;
     height: 20%;
     background-color: white;
     stroke: black;

@@ -96,12 +96,12 @@ const SetTimer = ({ notes, setNotes, setStartTime, setEndTime, changeMode }) => 
                 <SetClock>
                     <SetNumber>
                         <IncrementNumber onClick={e => setHours(hours + 1)}>▲</IncrementNumber>
-                        <InputNumber type='number' value={hours} onChange={e => setHours(e.target.value)} />
+                        <InputNumber inputmode='numeric' pattern='[0-9]*' type='number' value={hours} onChange={e => setHours(e.target.value)} />
                         <IncrementNumber onClick={e => setHours(hours - 1)}>▼</IncrementNumber>
                     </SetNumber>
                     <SetNumber>
                         <IncrementNumber onClick={e => setMinutes(minutes + 15)}>▲</IncrementNumber>
-                        <InputNumber type='number' step={15} value={minutes} onChange={e => setMinutes(e.target.value)} />
+                        <InputNumber inputmode='numeric' pattern='[0-9]*' type='number' step={15} value={minutes} onChange={e => setMinutes(e.target.value)} />
                         <IncrementNumber onClick={e => setMinutes(minutes - 15)}>▼</IncrementNumber>
                     </SetNumber>
                 </SetClock>

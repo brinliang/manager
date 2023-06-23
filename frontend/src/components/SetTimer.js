@@ -9,16 +9,16 @@ const SetSession = styled.div`
     justify-content: center;
     align-items: center;
     float: left;
-    width: 40%;
+    width: 30%;
     height: 100%;
 `
 
 const SetClock = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    width: 75%;
+    width: 45%;
     height: 20%;
 `
 
@@ -27,19 +27,19 @@ const SetNumber = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 35%;
+    width: 40%;
     height: 100%;
 `
 
 const InputNumber = styled.input`
-    width: 80%;
+    width: 100px;
     height: 50%;
     font-size: 70px;
     text-align: center;
 `
 
 const IncrementNumber = styled.button`
-    width: 80%;
+    width: 100px;
     height: 20%;
     background-color: white;
     stroke: black;
@@ -47,8 +47,8 @@ const IncrementNumber = styled.button`
 
 const SetNotes = styled.textarea`
     margin-top: 5%;
-    width: 80%;
-    height: 40%;
+    width: 300px;
+    height: 30%;
     font-size: 20px;
     padding: 10px;
     font-family: 'Montserrat', sans-serif;
@@ -56,7 +56,7 @@ const SetNotes = styled.textarea`
 
 const StartButton = styled.button`
     margin-top: 5%;
-    width: 60%;
+    width: 200px;
     height: 10%;
     font-size: 40px;
     background-color: white;
@@ -64,7 +64,7 @@ const StartButton = styled.button`
 `
 
 const Visual = styled.div`
-    width: 60%;
+    width: 70%;
     height: 100%;
     float: right;
     display: flex;
@@ -110,9 +110,9 @@ const SetTimer = ({ notes, setNotes, setStartTime, setEndTime, changeMode }) => 
             </SetSession>
             <Visual>
                 <Title> Average Hours: {average} </Title>
-                <HoursPerDay setAverage={setAverage} width={600} height={300} />
+                <HoursPerDay setAverage={setAverage} width={500} height={250} />
                 <Title> Cumulative Hours: {cumulative} </Title>
-                <CumulativeHoursPerDay setCumulative={setCumulative} width={600} height={300} />
+                <CumulativeHoursPerDay setCumulative={setCumulative} width={500} height={250} />
             </Visual>
         </>
     )

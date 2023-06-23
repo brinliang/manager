@@ -9,9 +9,11 @@ Install the required Python libraries by running ```pip install -r requirements.
 Create an environment variable with your MongoDB key by running ```echo MONGODB_URL = 'your url here'" >> .env``` in the root directory.
 
 ## run
-Run the server by running ```uvicorn main:app --reload``` in the root directory.
+Run the server locally with ```uvicorn main:app --reload``` in the root directory.
+
+Run the server in production with ```gunicorn main:app -k uvicorn.workers.UvicornWorker``` in the root directory.
 
 ## update
-Run just the frontend by running ```npm start``` in the frontend folder.
+Run just the frontend with ```npm start``` in the frontend folder.
 
-Create a new build by running ```npm run build``` in the frontend folder.
+Create a new build with ```npm run build``` in the frontend folder.

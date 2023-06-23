@@ -19,7 +19,7 @@ const SetClock = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 60%;
-    height: 30%;
+    height: 40%;
 `
 
 const SetNumber = styled.div`
@@ -48,7 +48,7 @@ const IncrementNumber = styled.button`
 const SetNotes = styled.textarea`
     margin-top: 5%;
     width: 300px;
-    height: 30%;
+    height: 20%;
     font-size: 20px;
     padding: 10px;
     font-family: 'Montserrat', sans-serif;
@@ -110,9 +110,9 @@ const SetTimer = ({ notes, setNotes, setStartTime, setEndTime, changeMode }) => 
             </SetSession>
             <Visual>
                 <Title> Average Hours: {average} </Title>
-                <HoursPerDay setAverage={setAverage} width={700} height={350} />
+                <HoursPerDay setAverage={setAverage} width={600} height={300} />
                 <Title> Cumulative Hours: {cumulative} </Title>
-                <CumulativeHoursPerDay setCumulative={setCumulative} width={700} height={350} />
+                <CumulativeHoursPerDay setCumulative={setCumulative} width={600} height={300} />
             </Visual>
         </>
     )

@@ -38,6 +38,7 @@ const InputNumber = styled.input`
     text-align: center;
     outline: none;
     border: none;
+    margin: 10px;
 `
 
 const IncrementNumber = styled.button`

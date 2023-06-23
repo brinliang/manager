@@ -9,7 +9,7 @@ const SetSession = styled.div`
     justify-content: center;
     align-items: center;
     float: left;
-    width: 30%;
+    width: 40%;
     height: 100%;
 `
 
@@ -64,7 +64,7 @@ const StartButton = styled.button`
 `
 
 const Visual = styled.div`
-    width: 70%;
+    width: 60%;
     height: 100%;
     float: right;
     display: flex;
@@ -110,9 +110,9 @@ const SetTimer = ({ notes, setNotes, setStartTime, setEndTime, changeMode }) => 
             </SetSession>
             <Visual>
                 <Title> Average Hours: {average} </Title>
-                <HoursPerDay setAverage={setAverage} width={700} height={350} />
+                <HoursPerDay setAverage={setAverage} width={600} height={300} />
                 <Title> Cumulative Hours: {cumulative} </Title>
-                <CumulativeHoursPerDay setCumulative={setCumulative} width={700} height={350} />
+                <CumulativeHoursPerDay setCumulative={setCumulative} width={600} height={300} />
             </Visual>
         </>
     )

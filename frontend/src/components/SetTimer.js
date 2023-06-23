@@ -27,19 +27,21 @@ const SetNumber = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90%;
     height: 40%;
 `
 
 const InputNumber = styled.input`
-    width: 60%;
+    width: 70%;
     height: 100%;
     font-size: 50px;
     text-align: center;
+    outline: none;
+    border: none;
 `
 
 const IncrementNumber = styled.button`
-    width: 20%;
+    width: 15%;
     height: 100%;
     background-color: white;
     stroke: black;
@@ -47,7 +49,7 @@ const IncrementNumber = styled.button`
 
 const SetNotes = styled.textarea`
     margin-top: 5%;
-    width: 300px;
+    width: 80%;
     height: 20%;
     font-size: 20px;
     padding: 10px;

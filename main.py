@@ -42,7 +42,7 @@ class Item(BaseModel):
 # routes
 # combine hours by day then sort by day
 @app.get('/hours-per-day')
-async def test():
+async def hours():
     combinedData = {}
     rawData = await db.times.find({}).to_list(None)
     for i in rawData:
@@ -61,7 +61,7 @@ async def test():
 
 
 @app.get('/cumulative-hours-per-day')
-async def test():
+async def cumulative_hours():
     combinedData = {}
     rawData = await db.times.find({}).to_list(None)
     for i in rawData:
@@ -93,7 +93,7 @@ async def add_session(item: Item):
 
 
 @app.get("/healthcheck")
-def read_root():
+def health_check():
     return {"status": "ok"}
 
 

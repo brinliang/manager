@@ -15,35 +15,32 @@ const SetSession = styled.div`
 
 const SetClock = styled.div`
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    width: 45%;
-    height: 20%;
+    width: 60%;
+    height: 30%;
 `
 
 const SetNumber = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    width: 40%;
-    height: 100%;
+    width: 80%;
+    height: 40%;
 `
 
 const InputNumber = styled.input`
-    width: 100px;
-    height: 50%;
+    width: 60%;
+    height: 100%;
     font-size: 50px;
     text-align: center;
-    outline: none;
-    border: none;
-    margin: 10px;
 `
 
 const IncrementNumber = styled.button`
-    width: 100px;
-    height: 20%;
+    width: 20%;
+    height: 100%;
     background-color: white;
     stroke: black;
 `
@@ -59,7 +56,7 @@ const SetNotes = styled.textarea`
 
 const StartButton = styled.button`
     margin-top: 5%;
-    width: 200px;
+    width: 40%;
     height: 10%;
     font-size: 40px;
     background-color: white;
@@ -98,14 +95,14 @@ const SetTimer = ({ notes, setNotes, setStartTime, setEndTime, changeMode }) => 
             <SetSession>
                 <SetClock>
                     <SetNumber>
-                        <IncrementNumber onClick={e => setHours(Number(hours) + 1)}>▲</IncrementNumber>
+                        <IncrementNumber onClick={e => setHours(Number(hours) - 1)}>◀</IncrementNumber>
                         <InputNumber min='0' max='99' type='number' value={hours} onChange={e => setHours(e.target.value)} />
-                        <IncrementNumber onClick={e => setHours(Number(hours) - 1)}>▼</IncrementNumber>
+                        <IncrementNumber onClick={e => setHours(Number(hours) + 1)}>▶</IncrementNumber>
                     </SetNumber>
                     <SetNumber>
-                        <IncrementNumber onClick={e => setMinutes(Number(minutes) + 15)}>▲</IncrementNumber>
+                        <IncrementNumber onClick={e => setMinutes(Number(minutes) - 15)}>◀</IncrementNumber>
                         <InputNumber min='0' max='99' type='number' step={15} value={minutes} onChange={e => setMinutes(e.target.value)} />
-                        <IncrementNumber onClick={e => setMinutes(Number(minutes) - 15)}>▼</IncrementNumber>
+                        <IncrementNumber onClick={e => setMinutes(Number(minutes) + 15)}>▶</IncrementNumber>
                     </SetNumber>
                 </SetClock>
                 <SetNotes value={notes} onChange={e => setNotes(e.target.value)}></SetNotes>
@@ -113,9 +110,9 @@ const SetTimer = ({ notes, setNotes, setStartTime, setEndTime, changeMode }) => 
             </SetSession>
             <Visual>
                 <Title> Average Hours: {average} </Title>
-                <HoursPerDay setAverage={setAverage} width={500} height={250} />
+                <HoursPerDay setAverage={setAverage} width={700} height={350} />
                 <Title> Cumulative Hours: {cumulative} </Title>
-                <CumulativeHoursPerDay setCumulative={setCumulative} width={500} height={250} />
+                <CumulativeHoursPerDay setCumulative={setCumulative} width={700} height={350} />
             </Visual>
         </>
     )

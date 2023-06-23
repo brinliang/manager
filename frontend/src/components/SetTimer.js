@@ -34,7 +34,7 @@ const SetNumber = styled.div`
 const InputNumber = styled.input`
     width: 100px;
     height: 50%;
-    font-size: 70px;
+    font-size: 50px;
     text-align: center;
     outline: none;
     border: none;
@@ -98,12 +98,12 @@ const SetTimer = ({ notes, setNotes, setStartTime, setEndTime, changeMode }) => 
                 <SetClock>
                     <SetNumber>
                         <IncrementNumber onClick={e => setHours(Number(hours) + 1)}>▲</IncrementNumber>
-                        <InputNumber type='number' value={hours} onChange={e => setHours(e.target.value)} />
+                        <InputNumber min='0' max='99' type='number' value={hours} onChange={e => setHours(e.target.value)} />
                         <IncrementNumber onClick={e => setHours(Number(hours) - 1)}>▼</IncrementNumber>
                     </SetNumber>
                     <SetNumber>
                         <IncrementNumber onClick={e => setMinutes(Number(minutes) + 15)}>▲</IncrementNumber>
-                        <InputNumber type='number' step={15} value={minutes} onChange={e => setMinutes(e.target.value)} />
+                        <InputNumber min='0' max='99' type='number' step={15} value={minutes} onChange={e => setMinutes(e.target.value)} />
                         <IncrementNumber onClick={e => setMinutes(Number(minutes) - 15)}>▼</IncrementNumber>
                     </SetNumber>
                 </SetClock>

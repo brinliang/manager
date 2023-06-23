@@ -43,10 +43,12 @@ class Item(BaseModel):
 # combine hours by day then sort by day
 @app.get('/hours-per-day')
 async def hours():
+    total = 0
     combinedData = {}
     rawData = await db.times.find({}).to_list(None)
     for i in rawData:
         duration = (i['endTime'] - i['startTime']) / (1000 * 60 * 60)
+        total += duration
         day = datetime.fromtimestamp(
             i['startTime'] / 1000).__format__('%m/%d/%Y')
         if day in combinedData.keys():
@@ -57,15 +59,18 @@ async def hours():
     formattedData = list(map(list, combinedData.items()))
     formattedData.sort(key=lambda x: datetime.strptime(x[0], '%m/%d/%Y'))
 
-    return {'data': formattedData}
+
+    return {'data': formattedData, 'average': '%.1f'%(total / len(formattedData))}
 
 
 @app.get('/cumulative-hours-per-day')
 async def cumulative_hours():
+    total = 0
     combinedData = {}
     rawData = await db.times.find({}).to_list(None)
     for i in rawData:
         duration = (i['endTime'] - i['startTime']) / (1000 * 60 * 60)
+        total += duration
         day = datetime.fromtimestamp(
             i['startTime'] / 1000).__format__('%m/%d/%Y')
         if day in combinedData.keys():
@@ -83,7 +88,7 @@ async def cumulative_hours():
     durations = list(accumulate(durations))
     cumulativeData = list(map(list, zip(dates, durations)))
 
-    return {'data': cumulativeData}
+    return {'data': cumulativeData, 'cumulative': '%.1f'%(total)}
 
 
 @app.post('/add')

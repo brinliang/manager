@@ -37,7 +37,7 @@ const Timer = ({ notes, startTime, endTime, changeMode }) => {
     const stopTimer = () => {
         logs.endTime = Date.now()
         axios
-            .post('http://127.0.0.1:8000/add', logs)
+            .post(BACKEND_URL + '/add', logs)
         changeMode('set')
     }
 

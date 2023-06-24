@@ -95,6 +95,7 @@ const SetTimer = ({ notes, setNotes, setStartTime, setEndTime, changeMode }) => 
     return (
         <>
             <SetSession>
+                <SetNotes value={notes} onChange={e => setNotes(e.target.value)}></SetNotes>
                 <SetClock>
                     <SetNumber>
                         <IncrementNumber onClick={e => setHours(Number(hours) - 1)}>◀</IncrementNumber>
@@ -107,7 +108,6 @@ const SetTimer = ({ notes, setNotes, setStartTime, setEndTime, changeMode }) => 
                         <IncrementNumber onClick={e => setMinutes(Number(minutes) + 15)}>▶</IncrementNumber>
                     </SetNumber>
                 </SetClock>
-                <SetNotes value={notes} onChange={e => setNotes(e.target.value)}></SetNotes>
                 <StartButton onClick={reset}> ▶ </StartButton>
             </SetSession>
             <Visual>

@@ -28,6 +28,7 @@ const Notes = styled.div`
 
 const Timer = ({ notes, startTime, endTime, changeMode }) => {
     const [time, setTime] = useState(endTime - Date.now())
+    const [wake, setWake] = useState(true)
 
     const logs = {
         notes: notes,
@@ -43,6 +44,11 @@ const Timer = ({ notes, startTime, endTime, changeMode }) => {
 
     useEffect(() => {
         const interval = setInterval(() => setTime(endTime - Date.now()), 1000)
+        if (wake && time <= 5 * 60 * 1000) {
+            axios
+                .get(BACKEND_URL + '/healthcheck')
+            setWake(false)
+        }
         if (time <= 0) {
             stopTimer()
         }
